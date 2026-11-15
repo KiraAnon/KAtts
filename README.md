@@ -74,7 +74,7 @@ Python 3.10+，仅支持 **ARM64 Linux/Android**（`bin/dec_server` 是 aarch64 
 
 ```bash
 # 一条命令拉齐（会自动解压到 models/ 和 segs/）
-export KATTS_RELEASE_URL=<本仓库 Releases 里 v0.1.0 的下载前缀>
+export KATTS_RELEASE_URL=https://github.com/KiraAnon/KAtts/releases/download/v0.1.0
 bash scripts/get_models.sh
 ```
 
