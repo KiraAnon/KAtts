@@ -1,0 +1,23 @@
+# ── 核心（必需）──
+numpy>=1.24
+onnxruntime>=1.16
+
+# ── 中文文本前端（缺一个都起不来）──
+pypinyin>=0.49
+jieba_fast>=0.53
+cn2an>=0.5.22
+
+# ── 多语言（可选，只用中文不用装）──
+# 英文
+# inflect>=6.0
+# nltk>=3.8
+# g2p_en>=2.1.0
+# wordsegment
+# 日语
+# pyopenjtalk
+# 韩语
+# jamo  ko_pron  g2pk2
+# 粤语
+# ToJyutping
+# 语种自动分段（会让 fast-langdetect 首次运行下载 ~130MB fasttext 模型）
+# fast-langdetect>=0.2

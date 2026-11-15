@@ -1,0 +1,17 @@
+# 统一换行符 —— Windows 上提交时不能把 sh/py 转成 CRLF，
+# 否则手机上跑会报 bad interpreter: /bin/sh^M
+* text=auto eol=lf
+*.sh   text eol=lf
+*.py   text eol=lf
+*.md   text eol=lf
+*.ps1  text eol=crlf
+
+# 二进制：不要做任何换行转换，也不要当文本 diff
+*.onnx       binary
+*.onnx.data  binary
+*.mnn        binary
+*.npz        binary
+*.so         binary
+bin/dec_server binary
+*.pcm        binary
+*.wav        binary
