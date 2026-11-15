@@ -70,14 +70,20 @@ Python 3.10+，仅支持 **ARM64 Linux/Android**（`bin/dec_server` 是 aarch64 
 
 ### 2. 模型
 
-模型体积太大，不随仓库分发。放到项目根目录：
+模型约 899 MB，超过 GitHub 单文件限制，走 **Release** 分发（两个压缩包）：
 
+```bash
+# 一条命令拉齐（会自动解压到 models/ 和 segs/）
+export KATTS_RELEASE_URL=<本仓库 Releases 里 v0.1.0 的下载前缀>
+bash scripts/get_models.sh
 ```
-KAtts/
-├── models/          ← 4 个 ONNX + 1 个外部权重 + 1 个 npz（见 models/README.md）
-├── segs/            ← 声码器 11 段 .mnn（见 models/README.md）
-└── refs/            ← 参考音色 *.npz（见 refs/README.md）
-```
+
+| 包 | 解开后 | 内容 |
+| --- | --- | --- |
+| `models.tar.gz` | `models/` | 4 个 ONNX + 1 个外部权重 + 1 个 npz |
+| `segs.tar.gz` | `segs/` | 声码器 11 段 .mnn |
+
+参考音色（`refs/`）**已经随仓库自带**，不用下载。
 
 **必须先准备模型，否则启动会直接报错并提示缺哪个文件。**
 
